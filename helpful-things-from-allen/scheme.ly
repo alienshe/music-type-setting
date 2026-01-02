@@ -1,4 +1,4 @@
-#(set-default-paper-size (if (ly:get-option 'a4) "a4" "letter"))
+
 
 date = #(strftime "%Y-%m-%d" (localtime (current-time)))
 

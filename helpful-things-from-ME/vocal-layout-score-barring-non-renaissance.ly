@@ -10,10 +10,11 @@
     \context {
         %\Voice
         \Staff
+
+        \override Slur.transparent = ##t 
         \consists Ambitus_engraver
          %autoBeaming = ##t
-        \override Slur.transparent = ##t 
-
+        
             % took me forever to track this down
             \remove "New_fingering_engraver"
     }

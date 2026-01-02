@@ -1,7 +1,7 @@
 \version "2.24.4"
 \include "english.ly"
 
-\include "../helpful-things-from-allen/paper-1-score.ly" 
+%\include "../helpful-things-from-allen/paper-1-score.ly" 
 \include "../helpful-things-from-allen/global-score.ly" 
 \include "../helpful-things-from-allen/macros.ly" 
 \include "../helpful-things-from-allen/scheme.ly" 
@@ -14,12 +14,13 @@
     subtitle = ""
     instrument = ""
     language = "English"
-    folio = \markup { The First Booke of Canzonets to Two Voyces (1595) }
+    poet = "The First Booke of Canzonets to Two Voyces (1595)"
 
     % Unchanging:
-    composer = "Thomas Morley"
-    booktitle = \markup { Typeset by Sylvie Nolf }}
-
+    arranger  = "Thomas Morley"
+    tagline = ""
+    copyright = "Typeset by Sylvie Nolf"
+}
 cantusVincipit = \relative c' {
     \time 4/4
     \clef "petrucci-c1"
@@ -229,21 +230,17 @@ tenorVincipitVoice = <<
     >>
 >>
 
-
-\book {
-    \bookOutputName "I go before my darling"
-
-    \score {
+main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #4.5
+                \override StaffGrouper.staff-staff-spacing.padding = #5
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Cantus"
                     \incipit \cantusVincipitVoice
                     \clef "treble"
                     \global
-                    \cantusV
+                    \transpose f d {\cantusV}
                 >>
                 \addlyrics { \cantusLyricsV }
                
@@ -252,7 +249,7 @@ tenorVincipitVoice = <<
                     \incipit \tenorVincipitVoice
                     \clef "treble"
                     \global
-                    \tenorV
+                    \transpose f d {\tenorV}
                 >>
                 \addlyrics { \tenorLyricsV }
              >>
@@ -265,4 +262,14 @@ tenorVincipitVoice = <<
             }
         }
     }   
+
+\book {
+  \paper {
+  #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
+  systems-per-page = #5
+  print-page-number = false
+  }
+    \bookOutputName "I go before my darling"
+    \main_score
+    
 }

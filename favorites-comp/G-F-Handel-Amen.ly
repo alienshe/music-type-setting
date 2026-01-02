@@ -1,7 +1,7 @@
 \version "2.24.4"
 \include "english.ly"
 
-\include "../helpful-things-from-allen/paper-1-score.ly" 
+%\include "../helpful-things-from-ME/paper-1-score-A5-book.ly" 
 \include "../helpful-things-from-allen/global-score.ly" 
 \include "../helpful-things-from-allen/macros.ly" 
 \include "../helpful-things-from-allen/scheme.ly" 
@@ -11,14 +11,15 @@
 \header {
     % Things that change per piece:
     title = "Amen"
-    subtitle = ""
-    instrument = ""
+    poet = "From The Messiah (1741)"
+    copyright = "Typeset by Sylvie Nolf 2026"
+
     language = "English"
     folio = \markup { The Messiah }
-
+    tagline = ""
     % Unchanging:
     composer = "G. F. Handel"
-    booktitle = \markup { Typeset by Sylvie Nolf 2026 }}
+}
 
 cantusVincipit = \relative c' {
     \clef "soprano"
@@ -478,15 +479,11 @@ tenorVincipitVoice = <<
 >>
 
 
-\include "../helpful-things-from-ME/vocal-layout-score-barring-non-renaissance.ly"
-\include "english.ly"
-\book {
-    \bookOutputName "amen_messiah"
-
-    \score {
+main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #4.5
+
+
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Soprano"
@@ -540,4 +537,16 @@ tenorVincipitVoice = <<
         
         
     }   
+
+\include "../helpful-things-from-ME/vocal-layout-score-barring-non-renaissance.ly"
+\include "english.ly"
+\book {
+  \paper {
+  #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
+  systems-per-page = #3
+  print-page-number = false
+  }
+    \bookOutputName "amen_messiah"
+    \main_score
+    
 }

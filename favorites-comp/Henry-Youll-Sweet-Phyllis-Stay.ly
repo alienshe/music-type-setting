@@ -1,7 +1,7 @@
 \version "2.18.2"
 \include "english.ly"
 
-\include "../helpful-things-from-allen/paper-1-score.ly" 
+%\include "../helpful-things-from-ME/paper-1-score-A5-book.ly" 
 \include "../helpful-things-from-allen/global-score.ly" 
 \include "../helpful-things-from-allen/macros.ly" 
 \include "../helpful-things-from-allen/scheme.ly" 
@@ -27,8 +27,8 @@
     source = \markup { Canzonets to Three Voyces (1608) }
     year = idk
     style = "Renaissance"
-
-    booktitle = \markup {Typeset by Sylvie Nolf 2025}
+    tagline = ""
+    copyright= "Typeset by Sylvie Nolf 2025"
 }
 
 
@@ -262,13 +262,10 @@ bassusVincipitVoice = <<
     >>
 >>
 
-\book {
-    \bookOutputName "sweet_phyllis_stay"
-    \bookOutputSuffix "--0-score"
-    \score {
+main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #6
+                \override StaffGrouper.staff-staff-spacing.padding = #2
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Cantus"
@@ -298,5 +295,15 @@ bassusVincipitVoice = <<
          >>
         \include "../helpful-things-from-allen/vocal-layout-score-barring.ly"
     }   
+
+\book {
+  \paper {
+  #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
+  systems-per-page = #4
+  print-page-number = false
+  }
+    \bookOutputName "sweet_phyllis_stay"
+    
+    \main_score
    
 }

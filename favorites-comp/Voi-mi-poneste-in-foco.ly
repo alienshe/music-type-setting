@@ -1,7 +1,7 @@
 \version "2.18.2"
 \include "english.ly"
 
-\include "../helpful-things-from-allen/paper-1-score.ly" 
+%\include "../helpful-things-from-allen/paper-1-score.ly" 
 \include "../helpful-things-from-allen/global-score.ly" 
 \include "../helpful-things-from-allen/macros.ly" 
 \include "../helpful-things-from-allen/scheme.ly" 
@@ -11,8 +11,7 @@
 \header {
     % Things that change per piece:
     title = "Voi mi poneste in foco"
-    subtitle = ""
-    instrument = "Voi mi poneste in foco:  (score)"
+    poet = "Primo libro di madrigali a3 (1542)"
     needtranslation = #'f
     language = "italian"
     folio = \markup { Pietro Bembo (1470-1547) \italic { Gli Asolani } (1505) }
@@ -23,11 +22,11 @@
     flats = 1
     final = "f"
     categories = "[madrigal]"
-    composer = "Jacques Arcadelt (1507-1568)"
+    composer = "Jacques Arcadelt"
     source = \markup { \italic { Primo libro di madrigali a3 } (Antonio Gardano press, Venice, 1542) }
     year = 1542
     style = "Renaissance"
-
+    copyright = "Adapted from version typeset by Allen Garvin"
     booktitle = \markup { Typeset by Allen Garvin (aurvondel@gmail.com) (orig. \lastupdated / ver. #(strftime "%Y-%m-%d)" (localtime (current-time))) CC BY-NC 4.0 (no perf. restrictions) }
     tagline = #'f
     cksum = "970866d93021383f763fd2ab85e255261362f5e9"
@@ -188,13 +187,10 @@ bassusVincipitVoice = <<
     >>
 >>
 
-\book {
-    \bookOutputName "05-arcadelt--voi_mi_poneste_in_foco-"
-    \bookOutputSuffix "--0-score"
-    \score {
+main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #5
+                \override StaffGrouper.staff-staff-spacing.padding = #2
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Cantus"
@@ -223,34 +219,16 @@ bassusVincipitVoice = <<
              >>
          >>
         \include "../helpful-things-from-allen/vocal-layout-score-barring.ly"
-        \midi {
-            \context {
-                \Score
-                tempoWholesPerMinute = #(ly:make-moment 128 2)
-            }
-        }
-    }   
-    \markup {
-        \fill-line {
-            \column {
-                \line { Voi mi poneste in foco, }
-                \line { Per farmi anzi 'l mio dì, Donna, perire; }
-                \line { E perché questo mal vi parea poco, }
-                \line { Col pianto raddoppiaste il mio languire. }
-                \line { Or io vi vo' ben dire: }
-                \line { Levate l'un martire, }
-                \line { Che di due morti, io non posso morire. }
-            }
-            \column {
-                \line { You have set me afire, }
-                \line { To make me perish before my time, Lady; }
-                \line { And since this injury seems so little to you, }
-                \line { With weeping you doubled my anguish. }
-                \line { Now to you I will say }
-                \line { Lift one torment, }
-                \line { As from two deaths I cannot die. }
-                \line { \hspace #10 \italic { translation by editor } } 
-            }
-        }
+        }   
+
+
+\book {
+    \paper {
+    #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
+    systems-per-page = #4
+    print-page-number = false
     }
+    \bookOutputName "arcadelt--voi_mi_poneste_in_foco"
+    \main_score
+    
 }

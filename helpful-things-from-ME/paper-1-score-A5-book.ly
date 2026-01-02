@@ -4,6 +4,8 @@
     print-first-page-number = ##t
     ragged-bottom = ##f
     ragged-last-bottom = ##t
+    print-page-number = false
+    #(set-paper-size "a6")
     myStaffSize = #35
     #(define fonts
         (make-pango-font-tree "Liberation Serif"
