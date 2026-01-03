@@ -349,7 +349,7 @@ main_score = \score {
                 \new Voice <<
                     \set Staff.instrumentName = #"Altus"
                     \incipit \tenorVincipitVoice
-                    \clef "treble_8"
+                    \clef "treble"
                     \global
                     \transpose f d {\tenorV}
                 >>
@@ -369,8 +369,8 @@ main_score = \score {
 
 \book {
   \paper {
-  #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
-  systems-per-page = #4
+  #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
+  %systems-per-page = #4
   print-page-number = false
   }
     \bookOutputName "arise_get_up"

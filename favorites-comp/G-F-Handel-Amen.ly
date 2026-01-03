@@ -542,8 +542,8 @@ main_score = \score {
 \include "english.ly"
 \book {
   \paper {
-  #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
-  systems-per-page = #3
+  #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
+  %systems-per-page = #3
   print-page-number = false
   }
     \bookOutputName "amen_messiah"

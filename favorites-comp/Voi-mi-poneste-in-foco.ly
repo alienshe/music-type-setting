@@ -224,8 +224,8 @@ main_score = \score {
 
 \book {
     \paper {
-    #(set-paper-size '(cons (* 155.4 mm) (* 220.5 mm)))
-    systems-per-page = #4
+    #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
+    %systems-per-page = #4
     print-page-number = false
     }
     \bookOutputName "arcadelt--voi_mi_poneste_in_foco"
