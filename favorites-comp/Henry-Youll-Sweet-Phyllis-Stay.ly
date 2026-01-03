@@ -24,7 +24,7 @@
     final = "f"
     categories = "[madrigal]"
     composer = "Henry Youll"
-    source = \markup { Canzonets to Three Voyces (1608) }
+    source = \markup { From: Canzonets to Three Voyces (pub. 1608) }
     year = idk
     style = "Renaissance"
     tagline = ""
