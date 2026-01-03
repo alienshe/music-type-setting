@@ -14,6 +14,7 @@
     subtitle = ""
     instrument = ""
     needtranslation = #'f
+    poet = "Canzonets to Three Voyces (1608)"
  
     folio = \markup { }
 
@@ -28,7 +29,7 @@
     year = idk
     style = "Renaissance"
     tagline = ""
-    copyright= "Typeset by Sylvie Nolf 2025"
+    copyright= "Typeset by Sylvie Nolf"
 }
 
 
@@ -298,8 +299,8 @@ main_score = \score {
 
 \book {
   \paper {
-  #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
-  %systems-per-page = #4
+  #(set-paper-size '(cons (* 150.545304 mm) (* 213.61158 mm)))
+  systems-per-page = #4
   print-page-number = false
   }
     \bookOutputName "sweet_phyllis_stay"

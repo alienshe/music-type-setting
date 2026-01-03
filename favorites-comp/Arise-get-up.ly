@@ -369,8 +369,13 @@ main_score = \score {
 
 \book {
   \paper {
-  #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
-  %systems-per-page = #4
+    #(set-paper-size '(cons (* 150.545304 mm) (* 213.61158 mm)))
+  systems-per-page = #4
+  system-system-spacing =
+    #'((basic-distance . 1)
+    (minimum-distance . 1)
+    (padding . 3)
+    (stretchability . 30)) 
   print-page-number = false
   }
     \bookOutputName "arise_get_up"

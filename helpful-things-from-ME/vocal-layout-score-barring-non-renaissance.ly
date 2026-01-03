@@ -4,7 +4,7 @@
         \Lyrics
         \override  LyricHyphen.minimum-distance = #0.8
     }
-    indent = 4\cm
+    indent = 2.2\cm
     incipit-width = 1\cm
 
     \context {

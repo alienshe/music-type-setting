@@ -233,7 +233,9 @@ tenorVincipitVoice = <<
 main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #5
+                \override StaffGrouper.staff-staff-spacing =      
+                #'((basic-distance . 2)
+                   (padding . 4))
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Cantus"
@@ -265,8 +267,13 @@ main_score = \score {
 
 \book {
   \paper {
-  #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
+  #(set-paper-size '(cons (* 150.545304 mm) (* 213.61158 mm)))
   %systems-per-page = #5
+  system-system-spacing =
+    #'((basic-distance . 4)
+    (minimum-distance . 2)
+    (padding . 5)
+    (stretchability . 0)) 
   
   print-page-number = false
   }

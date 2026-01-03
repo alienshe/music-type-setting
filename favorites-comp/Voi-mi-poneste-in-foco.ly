@@ -190,7 +190,9 @@ bassusVincipitVoice = <<
 main_score = \score {
          <<
             \new ChoirStaff = choirStaff \with {
-                \override StaffGrouper.staff-staff-spacing.padding = #2
+                     \override StaffGrouper.staff-staff-spacing =      
+                #'((basic-distance . 2)
+                   (padding . -2))
             } <<
                 \new Voice <<
                     \set Staff.instrumentName = #"Cantus"
@@ -224,8 +226,15 @@ main_score = \score {
 
 \book {
     \paper {
-    #(set-paper-size '(cons (* 167.27256 mm) (* 237.3462 mm)))
+     #(set-paper-size '(cons (* 150.545304 mm) (* 213.61158 mm)))
     %systems-per-page = #4
+      #(set-paper-size '(cons (* 150.545304 mm) (* 213.61158 mm)))
+  %systems-per-page = #5
+  system-system-spacing =
+    #'((basic-distance . 2)
+    (minimum-distance . 2)
+    (padding . 1.2)
+    (stretchability . 20)) 
     print-page-number = false
     }
     \bookOutputName "arcadelt--voi_mi_poneste_in_foco"
